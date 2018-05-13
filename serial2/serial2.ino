@@ -27,7 +27,10 @@ void loop()
 
   /* this part turns on one light on the matrix */
   if(serialvalue > 100) {
-    matrix.drawPixel(0,0, matrix.Color(serialvalue,0,0));
+    matrix.drawPixel(0,0, matrix.Color(255, 255, 255));
     matrix.show();  
+  } else if (serialvalue < 100) {
+    matrix.drawPixel(0, 0, matrix.Color(0, 0, 0));
+    matrix.show();
   }
-}
+} 
